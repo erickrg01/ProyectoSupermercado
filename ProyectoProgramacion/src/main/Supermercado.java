@@ -3,6 +3,9 @@ package main;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -300,6 +303,21 @@ public class Supermercado extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	txFactura.setText(nuevaFactura.mostrarListaCompra());
                 tabbedPane.setSelectedIndex(6);
+                String fileName = "data/salida.txt";
+
+                try {
+                    // Crear un BufferedWriter para escribir en el archivo
+                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+
+                    String input = nuevaFactura.mostrarListaCompra();
+                    bufferedWriter.write(input);
+                    // Cerrar el BufferedWriter y el Scanner
+                    bufferedWriter.close();
+                    
+                    System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
+                } catch (IOException excp) {
+                    System.out.println("Error al escribir en el archivo: " + excp.getMessage());
+                }
             }
         });
 		btnVolverAInicio.addActionListener(new ActionListener() {
