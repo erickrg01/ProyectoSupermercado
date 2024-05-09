@@ -20,9 +20,17 @@ public class Factura {
 		}
 	}
 	public String mostrarListaCompra() {
-		String factura="";
+		String factura="Producto   Precio Producto    Peso     Precio Final  ";
 		for (int i = 0; i < listaCompra.size(); i++) {
-			factura += listaCompra.get(i)+"\n";
+			if(listaCompra.get(i) instanceof ProductoFresco) {
+				factura += listaCompra.get(i)+"\n";
+			}
+		}
+		factura="Producto   Precio Producto    Numero de Botellas     Precio Final  ";
+		for (int i = 0; i < listaCompra.size(); i++) {
+			if(listaCompra.get(i) instanceof ProductoBebida) {
+				factura += listaCompra.get(i)+"\n";
+			}
 		}
 		return factura;
 	}

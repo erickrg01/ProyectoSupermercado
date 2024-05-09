@@ -17,7 +17,7 @@ public class ProductoFresco extends Producto{
 
 	@Override
 	public String toString() {
-		return super.toString()+", Peso= " + peso + ", Precio Final= "+ calcularPrecio();
+		return super.toString()+"    " + peso + "   "+ calcularPrecio();
 	}
 	
 }

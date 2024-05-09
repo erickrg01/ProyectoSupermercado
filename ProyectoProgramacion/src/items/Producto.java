@@ -23,7 +23,7 @@ public abstract class Producto {
 
 	@Override
 	public String toString() {
-		return nombre + ", Precio Producto= " + precio;
+		return nombre + "   " + precio;
 	}
 	
 	

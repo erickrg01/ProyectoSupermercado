@@ -33,7 +33,7 @@ public class Supermercado extends JFrame {
 	private JTextPane txFactura;
 	private JButton btnVolverAInicio;
 	private JPanel pCarne;
-	private JButton btnVolver;
+	private JButton btnVolver1;
 	private JButton btnPollo;
 	private JButton btnTernera;
 	private JTextField txKilogramos;
@@ -41,6 +41,11 @@ public class Supermercado extends JFrame {
 	
 	
 	private Factura nuevaFactura = new Factura();
+	private JPanel pBebidas;
+	private JLabel lblNumeroDeBotellas;
+	private JButton btnAgua;
+	private JButton btnVolver2;
+	private JTextField txNumBotellas;
 
 	/**
 	 * Launch the application.
@@ -126,9 +131,30 @@ public class Supermercado extends JFrame {
 		btnPollo.setBounds(501, 86, 117, 25);
 		pCarne.add(btnPollo);
 		
-		btnVolver = new JButton("Volver");
-		btnVolver.setBounds(388, 219, 117, 25);
-		pCarne.add(btnVolver);
+		btnVolver1 = new JButton("Volver");
+		btnVolver1.setBounds(388, 219, 117, 25);
+		pCarne.add(btnVolver1);
+		
+		pBebidas = new JPanel();
+		tabbedPane.addTab("Bebidas", null, pBebidas, null);
+		pBebidas.setLayout(null);
+		
+		btnAgua = new JButton("Agua");
+		btnAgua.setBounds(282, 102, 117, 25);
+		pBebidas.add(btnAgua);
+		
+		btnVolver2 = new JButton("Volver 2");
+		btnVolver2.setBounds(402, 232, 117, 25);
+		pBebidas.add(btnVolver2);
+		
+		txNumBotellas = new JTextField();
+		txNumBotellas.setBounds(384, 172, 114, 19);
+		pBebidas.add(txNumBotellas);
+		txNumBotellas.setColumns(10);
+		
+		lblNumeroDeBotellas = new JLabel("Numero de Botellas");
+		lblNumeroDeBotellas.setBounds(202, 174, 149, 15);
+		pBebidas.add(lblNumeroDeBotellas);
 		
 		JPanel pFactura = new JPanel();
 		tabbedPane.addTab("Factura", null, pFactura, null);
@@ -174,7 +200,7 @@ public class Supermercado extends JFrame {
                 tabbedPane.setSelectedIndex(0);
             }
         });
-		btnVolver.addActionListener(new ActionListener() {
+		btnVolver1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tabbedPane.setSelectedIndex(0);
             }
@@ -195,7 +221,14 @@ public class Supermercado extends JFrame {
                 nuevaFactura.añadirProducto(pf);
             }
         });
-		
+		btnAgua.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	double precio = 0.65;
+                int numBotellas = Integer.parseInt(txKilogramos.getText());
+                ProductoFresco pf = new ProductoFresco("Pollo",precio,numBotellas);
+                nuevaFactura.añadirProducto(pf);
+            }
+        });
 		
 	}
 }

@@ -15,7 +15,7 @@ public class ProductoBebida extends Producto{
 	
 	@Override
 	public String toString() {
-		return super.toString()+", numBotellas= " + numBotellas + ", Precio Final= "+ calcularPrecio();
+		return super.toString()+"   " + numBotellas + "    "+ calcularPrecio();
 	}
 	
 
