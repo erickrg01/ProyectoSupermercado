@@ -52,7 +52,7 @@ public class Supermercado extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-	    String usuarioGuardado = "AlbertoErickIsmael";
+	    String usuarioGuardado = "Yo";
         String contraseñaGuardada = "1234";
 
         String usuarioIngresado = JOptionPane.showInputDialog(null, "Ingrese su usuario:");
