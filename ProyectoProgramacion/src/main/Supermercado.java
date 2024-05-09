@@ -175,7 +175,7 @@ public class Supermercado extends JFrame {
 		
 		txFactura = new JTextPane();
 		txFactura.setEditable(false);
-		txFactura.setBounds(42, 31, 371, 529);
+		txFactura.setBounds(42, 31, 492, 529);
 		pFactura.add(txFactura);
 		
 		btnVolverAInicio = new JButton("Volver a inicio");
@@ -189,10 +189,15 @@ public class Supermercado extends JFrame {
                 tabbedPane.setSelectedIndex(1);
             }
         });
+		btnBebidas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                tabbedPane.setSelectedIndex(2);
+            }
+        });
 		btnVerFactura.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	txFactura.setText(nuevaFactura.mostrarListaCompra());
-                tabbedPane.setSelectedIndex(2);
+                tabbedPane.setSelectedIndex(3);
             }
         });
 		btnVolverAInicio.addActionListener(new ActionListener() {
@@ -225,10 +230,17 @@ public class Supermercado extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	double precio = 0.65;
                 int numBotellas = Integer.parseInt(txKilogramos.getText());
-                ProductoFresco pf = new ProductoFresco("Pollo",precio,numBotellas);
+                ProductoBebida pf = new ProductoBebida("Agua",precio,numBotellas);
                 nuevaFactura.añadirProducto(pf);
             }
         });
+		btnQuitarProducto.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				nuevaFactura.quitarProducto(txNombreProducto.getText());
+				txFactura.setText(nuevaFactura.mostrarListaCompra());
+			}
+		});
 		
 	}
 }
