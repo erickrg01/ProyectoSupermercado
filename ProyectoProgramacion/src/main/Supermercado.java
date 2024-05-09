@@ -40,9 +40,6 @@ public class Supermercado extends JFrame {
 	private JButton btnPollo;
 	private JButton btnTernera;
 	private JTextField txKilogramos;
-	
-	
-	
 	private Factura nuevaFactura = new Factura();
 	private JPanel pBebidas;
 	private JLabel lblNumeroDeBotellas;
