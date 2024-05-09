@@ -14,6 +14,7 @@ import javax.swing.JTextPane;
 
 import items.*;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 public class Supermercado extends JFrame {
@@ -51,16 +52,31 @@ public class Supermercado extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Supermercado frame = new Supermercado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	    String usuarioGuardado = "AlbertoErickIsmael";
+        String contraseñaGuardada = "1234";
+
+        String usuarioIngresado = JOptionPane.showInputDialog(null, "Ingrese su usuario:");
+        String contraseñaIngresada = JOptionPane.showInputDialog(null, "Ingrese su contraseña:");
+
+      
+        if (usuarioIngresado != null && contraseñaIngresada != null &&
+                usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
+           
+            EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    try {
+                        Supermercado frame = new Supermercado();
+                        frame.setVisible(true);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas. El programa se cerrará.");
+            System.exit(0);
+        }
 	}
 
 	/**
