@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -14,6 +16,7 @@ import javax.swing.JTextPane;
 
 import items.*;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 public class Supermercado extends JFrame {
@@ -46,21 +49,42 @@ public class Supermercado extends JFrame {
 	private JButton btnAgua;
 	private JButton btnVolver2;
 	private JTextField txNumBotellas;
+	private JPanel pPescado;
+	private JPanel pVerdura;
+	private JPanel pFruta;
+	private AbstractButton btnVolverPescado;
+	private AbstractButton btnVolverVerdura;
+	private AbstractButton btnVolverFruta;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Supermercado frame = new Supermercado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	    String usuarioGuardado = "Yo";
+        String contraseñaGuardada = "12345";
+
+        String usuarioIngresado = JOptionPane.showInputDialog(null, "Ingrese su usuario:");
+        String contraseñaIngresada = JOptionPane.showInputDialog(null, "Ingrese su contraseña:");
+
+      
+        if (usuarioIngresado != null && contraseñaIngresada != null &&
+                usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
+           
+            EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    try {
+                        Supermercado frame = new Supermercado();
+                        frame.setVisible(true);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas. El programa se cerrará.");
+            System.exit(0);
+        }
 	}
 
 	/**
@@ -114,6 +138,18 @@ public class Supermercado extends JFrame {
 		tabbedPane.addTab("Carne", null, pCarne, null);
 		pCarne.setLayout(null);
 		
+		pPescado = new JPanel();
+		tabbedPane.addTab("Pescado", null, pPescado, null);
+		pPescado.setLayout(null);
+
+		pVerdura = new JPanel();
+		tabbedPane.addTab("Verdura", null, pVerdura, null);
+		pVerdura.setLayout(null);
+
+		pFruta = new JPanel();
+		tabbedPane.addTab("Fruta", null, pFruta, null);
+		pFruta.setLayout(null);
+		
 		btnTernera = new JButton("Ternera");
 		btnTernera.setBounds(281, 86, 117, 25);
 		pCarne.add(btnTernera);
@@ -134,6 +170,18 @@ public class Supermercado extends JFrame {
 		btnVolver1 = new JButton("Volver");
 		btnVolver1.setBounds(388, 219, 117, 25);
 		pCarne.add(btnVolver1);
+		
+		btnVolverPescado = new JButton("Volver");
+		btnVolverPescado.setBounds(388, 219, 117, 25);
+		pPescado.add(btnVolverPescado);
+		
+		btnVolverVerdura = new JButton("Volver");
+		btnVolverVerdura.setBounds(388, 219, 117, 25);
+		pVerdura.add(btnVolverVerdura);
+		
+		btnVolverFruta = new JButton("Volver");
+		btnVolverFruta.setBounds(388, 219, 117, 25);
+		pFruta.add(btnVolverFruta);
 		
 		pBebidas = new JPanel();
 		tabbedPane.addTab("Bebidas", null, pBebidas, null);
@@ -156,6 +204,47 @@ public class Supermercado extends JFrame {
 		lblNumeroDeBotellas.setBounds(202, 174, 149, 15);
 		pBebidas.add(lblNumeroDeBotellas);
 		
+		//FOTOS
+		tabbedPane.addTab("Carne", null, pCarne, null);
+		pCarne.setLayout(null);
+
+		JLabel lblFondoCarne = new JLabel();
+		lblFondoCarne.setBounds(0, 0, 1100, 650);
+		lblFondoCarne.setIcon(new ImageIcon("imagenes_supermercado/carne.jpg")); 
+		pCarne.add(lblFondoCarne);
+
+		tabbedPane.addTab("Pescado", null, pPescado, null);
+		pPescado.setLayout(null);
+
+		JLabel lblFondoPescado = new JLabel();
+		lblFondoPescado.setBounds(100, 0, 1100, 830);
+		lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/pescado.jpg")); 
+		pPescado.add(lblFondoPescado);
+
+		tabbedPane.addTab("Verdura", null, pVerdura, null);
+		pVerdura.setLayout(null);
+
+		JLabel lblFondoVerdura = new JLabel();
+		lblFondoVerdura.setBounds(0, 0, 1100, 650);
+		lblFondoVerdura.setIcon(new ImageIcon("imagenes_supermercado/verdura.jpg")); 
+		pVerdura.add(lblFondoVerdura);
+
+		tabbedPane.addTab("Fruta", null, pFruta, null);
+		pFruta.setLayout(null);
+
+		JLabel lblFondoFruta = new JLabel();
+		lblFondoFruta.setBounds(0, 0, 1100, 600);
+		lblFondoFruta.setIcon(new ImageIcon("imagenes_supermercado/fruta.jpg")); 
+		pFruta.add(lblFondoFruta);
+
+		tabbedPane.addTab("Bebidas", null, pBebidas, null);
+		pBebidas.setLayout(null);
+
+		JLabel lblFondoBebidas = new JLabel();
+		lblFondoBebidas.setBounds(0, 0, 1100, 650);
+		lblFondoBebidas.setIcon(new ImageIcon("imagenes_supermercado/bebidas.jpg")); 
+		pBebidas.add(lblFondoBebidas);
+		
 		JPanel pFactura = new JPanel();
 		tabbedPane.addTab("Factura", null, pFactura, null);
 		pFactura.setLayout(null);
@@ -175,7 +264,7 @@ public class Supermercado extends JFrame {
 		
 		txFactura = new JTextPane();
 		txFactura.setEditable(false);
-		txFactura.setBounds(42, 31, 371, 529);
+		txFactura.setBounds(42, 31, 492, 529);
 		pFactura.add(txFactura);
 		
 		btnVolverAInicio = new JButton("Volver a inicio");
@@ -189,10 +278,31 @@ public class Supermercado extends JFrame {
                 tabbedPane.setSelectedIndex(1);
             }
         });
+		
+		btnPescado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(2);
+			}
+		});
+		btnVerdura.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(3);
+			}
+		});
+		btnFruta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(4);
+			}
+		});
+		btnBebidas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                tabbedPane.setSelectedIndex(5);
+            }
+        });
 		btnVerFactura.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	txFactura.setText(nuevaFactura.mostrarListaCompra());
-                tabbedPane.setSelectedIndex(2);
+                tabbedPane.setSelectedIndex(6);
             }
         });
 		btnVolverAInicio.addActionListener(new ActionListener() {
@@ -205,6 +315,29 @@ public class Supermercado extends JFrame {
                 tabbedPane.setSelectedIndex(0);
             }
         });
+		
+		btnVolver2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+		
+		btnVolverPescado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+		btnVolverVerdura.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+		btnVolverFruta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+			
 		btnTernera.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	double precio = 10.49;
@@ -225,10 +358,17 @@ public class Supermercado extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	double precio = 0.65;
                 int numBotellas = Integer.parseInt(txKilogramos.getText());
-                ProductoFresco pf = new ProductoFresco("Pollo",precio,numBotellas);
+                ProductoBebida pf = new ProductoBebida("Agua",precio,numBotellas);
                 nuevaFactura.añadirProducto(pf);
             }
         });
+		btnQuitarProducto.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				nuevaFactura.quitarProducto(txNombreProducto.getText());
+				txFactura.setText(nuevaFactura.mostrarListaCompra());
+			}
+		});
 		
 	}
 }
