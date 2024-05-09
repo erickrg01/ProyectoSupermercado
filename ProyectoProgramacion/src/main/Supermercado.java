@@ -61,7 +61,7 @@ public class Supermercado extends JFrame {
 	 */
 	public static void main(String[] args) {
 	    String usuarioGuardado = "AlbertoErickIsmael";
-        String contraseñaGuardada = "1234";
+        String contraseñaGuardada = "12345";
 
         String usuarioIngresado = JOptionPane.showInputDialog(null, "Ingrese su usuario:");
         String contraseñaIngresada = JOptionPane.showInputDialog(null, "Ingrese su contraseña:");
