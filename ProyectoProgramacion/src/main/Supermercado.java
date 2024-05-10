@@ -157,8 +157,9 @@ public class Supermercado extends JFrame {
 		tabbedPane.addTab("Inicio", null, Inicio, null);
 		Inicio.setLayout(null);
 
-		btnCarne = new JButton("Carne");
-		btnCarne.setBounds(83, 109, 117, 25);
+		btnCarne = new JButton("");
+		btnCarne.setIcon(new ImageIcon("imagenes_supermercado/FILETE.jpg"));
+		btnCarne.setBounds(118, 125, 130, 100);
 		Inicio.add(btnCarne);
 
 		btnPescado = new JButton("Pescado");
@@ -347,26 +348,22 @@ public class Supermercado extends JFrame {
 			}
 		});
 		btnVerFactura.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txFactura.setText(nuevaFactura.mostrarListaCompra());
-				tabbedPane.setSelectedIndex(6);
-				String fileName = "data/salida.txt";
-
-				try {
-					// Crear un BufferedWriter para escribir en el archivo
-					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
-
-					String input = nuevaFactura.mostrarListaCompra();
-					bufferedWriter.write(input);
-					// Cerrar el BufferedWriter y el Scanner
-					bufferedWriter.close();
-
-					System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
-				} catch (IOException excp) {
-					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
-				}
-			}
-		});
+            public void actionPerformed(ActionEvent e) {
+            	txFactura.setText(nuevaFactura.mostrarListaCompra());
+                tabbedPane.setSelectedIndex(6);
+                String fileName = "data/salida.txt";
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+                    String input = nuevaFactura.mostrarListaCompra();
+                    bufferedWriter.write(input);
+                    bufferedWriter.close();
+                    
+                    System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
+                } catch (IOException excp) {
+                    System.out.println("Error al escribir en el archivo: " + excp.getMessage());
+                }
+            }
+        });
 		btnVolverAInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(0);
