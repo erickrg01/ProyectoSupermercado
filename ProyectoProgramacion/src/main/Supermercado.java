@@ -70,30 +70,33 @@ public class Supermercado extends JFrame {
 		try {
 			FileReader fileReader = new FileReader(fileName);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			String[] contraseñas = new String[4];
+			String line;
+			String[][] usuariosYContraseñas = new String[4][2]; 
 
-			for (int i = 0; i < 4; i++) {
-				contraseñas[i] = bufferedReader.readLine();
+			int index = 0;
+			while ((line = bufferedReader.readLine()) != null) {
+
+				String[] parts = line.split(","); 
+				usuariosYContraseñas[index][0] = parts[0]; 
+				usuariosYContraseñas[index][1] = parts[1]; 
+				index++;
 			}
 
 			bufferedReader.close();
 
-			String usuarioGuardado = "Yo";
-			String[] contraseñaGuardada = contraseñas;
-
 			String usuarioIngresado = JOptionPane.showInputDialog(null, "Ingrese su usuario:");
 
-			// Crear y configurar el JPasswordField
+
 			JPasswordField passwordField = new JPasswordField();
 			passwordField.setEchoChar('*');
 
-			// Panel para contener el JPasswordField
+
 			JPanel panel = new JPanel();
 			panel.setLayout(new GridLayout(2, 2));
 			panel.add(new JLabel("Ingrese su contraseña:"));
 			panel.add(passwordField);
 
-			// Mostrar el panel en un diálogo de opción
+
 			int option = JOptionPane.showConfirmDialog(null, panel, "Autenticación", JOptionPane.OK_CANCEL_OPTION);
 
 			if (option == JOptionPane.OK_OPTION) {
@@ -102,9 +105,11 @@ public class Supermercado extends JFrame {
 
 				boolean credencialesCorrectas = false;
 
-				for (String contraseña : contraseñaGuardada) {
+				for (String[] usuarioYContraseña : usuariosYContraseñas) {
+					String usuarioGuardado = usuarioYContraseña[0];
+					String contraseñaGuardada = usuarioYContraseña[1];
 					if (usuarioIngresado != null && contraseñaIngresada != null &&
-							usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseña)) {
+							usuarioIngresado.equals(usuarioGuardado) && contraseñaIngresada.equals(contraseñaGuardada)) {
 						credencialesCorrectas = true;
 						break;
 					}
@@ -131,7 +136,6 @@ public class Supermercado extends JFrame {
 			System.out.println("Error al leer el archivo: " + e.getMessage());
 		}
 	}
-
 
 
 	/**
@@ -348,22 +352,22 @@ public class Supermercado extends JFrame {
 			}
 		});
 		btnVerFactura.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	txFactura.setText(nuevaFactura.mostrarListaCompra());
-                tabbedPane.setSelectedIndex(6);
-                String fileName = "data/salida.txt";
-                try {
-                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
-                    String input = nuevaFactura.mostrarListaCompra();
-                    bufferedWriter.write(input);
-                    bufferedWriter.close();
-                    
-                    System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
-                } catch (IOException excp) {
-                    System.out.println("Error al escribir en el archivo: " + excp.getMessage());
-                }
-            }
-        });
+			public void actionPerformed(ActionEvent e) {
+				txFactura.setText(nuevaFactura.mostrarListaCompra());
+				tabbedPane.setSelectedIndex(6);
+				String fileName = "data/salida.txt";
+				try {
+					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+					String input = nuevaFactura.mostrarListaCompra();
+					bufferedWriter.write(input);
+					bufferedWriter.close();
+
+					System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
+				} catch (IOException excp) {
+					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
+				}
+			}
+		});
 		btnVolverAInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(0);
