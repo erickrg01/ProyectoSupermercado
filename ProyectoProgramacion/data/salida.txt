@@ -1,5 +1,5 @@
 Producto	Precio Producto	Peso	Precio Final
-Ternera	10.49		7.8	81.82
-Pollo	8.75		2.8	24.5
+Ternera	10.49		6.7	70.28
+Pollo	8.75		6.7	58.63
 Producto	Precio Producto	Numero de Botellas	Precio Final
-El precio total de la compra es: 106.32
+El precio total de la compra es: 87.66

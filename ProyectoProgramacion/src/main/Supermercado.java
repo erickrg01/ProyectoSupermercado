@@ -558,6 +558,13 @@ public class Supermercado extends JFrame {
 				tabbedPane.setSelectedIndex(0);
 			}
 		});
+		
+		btnFinalizarCompra.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Gracias por su compra");
+				System.exit(0);
+			}
+		});
 
 		btnTernera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
