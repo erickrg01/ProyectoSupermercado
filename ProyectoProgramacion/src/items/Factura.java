@@ -31,14 +31,15 @@ public class Factura {
 				factura += listaCompra.get(i)+"\n";
 			}
 		}
+		factura += "El precio total de la compra es: " + calcularTotal();
 		return factura;
 	}
-	public void calcularTotal () {
+	public double calcularTotal () {
 		double total = 0;
 		for (int i = 0; i < listaCompra.size(); i++) {
 			total +=listaCompra.get(i).calcularPrecio();
 		}
-		System.out.println("El precio total de la compra es: "+total);
+		return total;
 	}
 	
 }

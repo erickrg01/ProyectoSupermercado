@@ -24,6 +24,7 @@ import javax.swing.JTextPane;
 import items.*;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JLayeredPane;
 
 
 public class Supermercado extends JFrame {
@@ -59,6 +60,13 @@ public class Supermercado extends JFrame {
 	private AbstractButton btnVolverPescado;
 	private AbstractButton btnVolverVerdura;
 	private AbstractButton btnVolverFruta;
+	private JPanel pUsuarios;
+	private JTextField txUsuario;
+	private JTextField txPassword;
+	private JButton btnAgregarUsuario;
+	private JButton btnBorrarUsuario;
+	private JButton btnUsuarios;
+	private JTextPane txPUsers;
 
 	/**
 	 * Launch the application.
@@ -149,12 +157,13 @@ public class Supermercado extends JFrame {
 	}
 	public void crearGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1200, 700);
+		setBounds(200, 30, 1400, 1000);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		tabbedPane.setBounds(12, 0, 1100, 650);
+		tabbedPane.setEnabled(false);
+		tabbedPane.setBounds(100, 0, 1200, 1000);
 		contentPane.add(tabbedPane);
 
 		JPanel Inicio = new JPanel();
@@ -166,25 +175,53 @@ public class Supermercado extends JFrame {
 		btnCarne.setBounds(118, 125, 130, 100);
 		Inicio.add(btnCarne);
 
-		btnPescado = new JButton("Pescado");
-		btnPescado.setBounds(212, 109, 117, 25);
+		btnPescado = new JButton("");
+		btnPescado.setIcon(new ImageIcon("imagenes_supermercado/pez.jpg"));
+		btnPescado.setBounds(260, 125, 130, 100);
 		Inicio.add(btnPescado);
 
-		btnVerdura = new JButton("Verdura");
-		btnVerdura.setBounds(341, 109, 117, 25);
+		btnVerdura = new JButton("");
+		btnVerdura.setIcon(new ImageIcon("imagenes_supermercado/multiverdura.jpg"));
+		btnVerdura.setBounds(402, 125, 130, 100);
 		Inicio.add(btnVerdura);
 
-		btnFruta = new JButton("Fruta");
-		btnFruta.setBounds(470, 109, 117, 25);
+		btnFruta = new JButton("");
+		btnFruta.setIcon(new ImageIcon("imagenes_supermercado/multifruta.jpg"));
+		btnFruta.setBounds(544, 125, 130, 100);
 		Inicio.add(btnFruta);
 
-		btnBebidas = new JButton("Bebidas");
-		btnBebidas.setBounds(599, 109, 117, 25);
+		btnBebidas = new JButton("");
+		btnBebidas.setIcon(new ImageIcon("imagenes_supermercado/multibebida.jpg"));
+		btnBebidas.setBounds(686, 125, 130, 100);
 		Inicio.add(btnBebidas);
 
 		btnVerFactura = new JButton("Ver factura");
-		btnVerFactura.setBounds(341, 242, 117, 25);
+		btnVerFactura.setBounds(273, 332, 117, 25);
 		Inicio.add(btnVerFactura);
+		
+		JLabel lblCarne = new JLabel("Carne");
+		lblCarne.setBounds(159, 237, 47, 25);
+		Inicio.add(lblCarne);
+		
+		JLabel lblPescado = new JLabel("Pescado");
+		lblPescado.setBounds(292, 242, 70, 15);
+		Inicio.add(lblPescado);
+		
+		JLabel lblFruta = new JLabel("Fruta");
+		lblFruta.setBounds(450, 242, 47, 15);
+		Inicio.add(lblFruta);
+		
+		JLabel lblVerdura = new JLabel("Verdura");
+		lblVerdura.setBounds(585, 242, 70, 15);
+		Inicio.add(lblVerdura);
+		
+		JLabel lblBebida = new JLabel("Bebida");
+		lblBebida.setBounds(722, 242, 54, 15);
+		Inicio.add(lblBebida);
+		
+		btnUsuarios = new JButton("Usuarios");
+		btnUsuarios.setBounds(544, 332, 117, 25);
+		Inicio.add(btnUsuarios);
 
 		pCarne = new JPanel();
 		tabbedPane.addTab("Carne", null, pCarne, null);
@@ -215,8 +252,9 @@ public class Supermercado extends JFrame {
 		lblKg.setBounds(344, 149, 29, 17);
 		pCarne.add(lblKg);
 
-		btnPollo = new JButton("Pollo");
-		btnPollo.setBounds(501, 86, 117, 25);
+		btnPollo = new JButton("");
+		btnPollo.setIcon(new ImageIcon("imagenes_supermercado/pollobt.jpg"));
+		btnPollo.setBounds(529, 57, 130, 100);
 		pCarne.add(btnPollo);
 
 		btnVolver1 = new JButton("Volver");
@@ -224,7 +262,7 @@ public class Supermercado extends JFrame {
 		pCarne.add(btnVolver1);
 
 		btnVolverPescado = new JButton("Volver");
-		btnVolverPescado.setBounds(388, 219, 117, 25);
+		btnVolverPescado.setBounds(512, 340, 117, 25);
 		pPescado.add(btnVolverPescado);
 
 		btnVolverVerdura = new JButton("Volver");
@@ -269,8 +307,8 @@ public class Supermercado extends JFrame {
 		pPescado.setLayout(null);
 
 		JLabel lblFondoPescado = new JLabel();
-		lblFondoPescado.setBounds(100, 0, 1100, 830);
-		lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/pescado.jpg")); 
+		lblFondoPescado.setBounds(12, 12, 1171, 911);
+		lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pPescado.add(lblFondoPescado);
 
 		tabbedPane.addTab("Verdura", null, pVerdura, null);
@@ -322,6 +360,34 @@ public class Supermercado extends JFrame {
 		btnVolverAInicio = new JButton("Volver a inicio");
 		btnVolverAInicio.setBounds(701, 158, 159, 25);
 		pFactura.add(btnVolverAInicio);
+		
+		pUsuarios = new JPanel();
+		tabbedPane.addTab("Usuarios", null, pUsuarios, null);
+		tabbedPane.setEnabledAt(7, false);
+		pUsuarios.setLayout(null);
+		
+		btnAgregarUsuario = new JButton("Agregar usuario");
+		btnAgregarUsuario.setBounds(652, 99, 149, 25);
+		pUsuarios.add(btnAgregarUsuario);
+		
+		btnBorrarUsuario = new JButton("Borrar usuario");
+		btnBorrarUsuario.setBounds(652, 201, 149, 25);
+		pUsuarios.add(btnBorrarUsuario);
+		
+		txUsuario = new JTextField();
+		txUsuario.setBounds(471, 102, 114, 19);
+		pUsuarios.add(txUsuario);
+		txUsuario.setColumns(10);
+		
+		txPassword = new JTextField();
+		txPassword.setBounds(471, 176, 114, 19);
+		pUsuarios.add(txPassword);
+		txPassword.setColumns(10);
+		
+		txPUsers = new JTextPane();
+		txPUsers.setEditable(false);
+		txPUsers.setBounds(44, 38, 312, 375);
+		pUsuarios.add(txPUsers);
 
 	}
 	public void crearEventos() {
@@ -366,6 +432,87 @@ public class Supermercado extends JFrame {
 				} catch (IOException excp) {
 					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
 				}
+			}
+		});
+		btnUsuarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String fileName = "fichero/contraseñas.txt";
+				String listaUsuarios="";
+
+		        try {
+		            FileReader fileReader = new FileReader(fileName);
+		            BufferedReader bufferedReader = new BufferedReader(fileReader);
+		            String linea = bufferedReader.readLine();
+		            while (linea != null) {
+		            	String[] parts = linea.split(",");
+		                listaUsuarios+=parts[0]+"\n";
+		                linea = bufferedReader.readLine();
+		            }
+
+		            bufferedReader.close();
+		        } catch (IOException excp) {
+		            System.out.println("Error al leer el archivo: " + excp.getMessage());
+		        }
+		        txPUsers.setText(listaUsuarios);
+				tabbedPane.setSelectedIndex(7);
+			}
+		});
+		btnAgregarUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String fileName = "fichero/contraseñas.txt";
+				try {
+					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
+					bufferedWriter.newLine();
+					String input = txUsuario.getText()+","+txPassword.getText();
+					bufferedWriter.write(input);
+					bufferedWriter.close();
+
+					System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
+				} catch (IOException excp) {
+					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
+				}
+				btnUsuarios.doClick();
+			}
+		});
+		btnBorrarUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String fileName = "fichero/contraseñas.txt";
+				String listaUsuarios="";
+				String usuarioB =txUsuario.getText();
+				int contador = 0;
+
+		        try {
+		            FileReader fileReader = new FileReader(fileName);
+		            BufferedReader bufferedReader = new BufferedReader(fileReader);
+		            String linea = bufferedReader.readLine();
+		            while (linea != null) {
+		            	String[] parts = linea.split(",");
+		            	if(!parts[0].equals(usuarioB)) {
+		            		if(contador==0) {
+		            			listaUsuarios+=linea;
+		            			contador++;
+		            		}else {
+		            			listaUsuarios+="\n"+linea;
+		            		}
+		            		
+		            	}
+		            	linea = bufferedReader.readLine();
+		            }
+		            bufferedReader.close();
+		        } catch (IOException excp) {
+		            System.out.println("Error al leer el archivo: " + excp.getMessage());
+		        }
+		        try {
+					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+					String input = listaUsuarios;
+					bufferedWriter.write(input);
+					bufferedWriter.close();
+
+					System.out.println("Las cadenas han sido escritas en el archivo '" + fileName + "'.");
+				} catch (IOException excp) {
+					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
+				}
+		        btnUsuarios.doClick();
 			}
 		});
 		btnVolverAInicio.addActionListener(new ActionListener() {
@@ -420,7 +567,7 @@ public class Supermercado extends JFrame {
 		btnAgua.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double precio = 0.65;
-				int numBotellas = Integer.parseInt(txKilogramos.getText());
+				int numBotellas = Integer.parseInt(txNumBotellas.getText());
 				ProductoBebida pf = new ProductoBebida("Agua",precio,numBotellas);
 				nuevaFactura.añadirProducto(pf);
 			}
