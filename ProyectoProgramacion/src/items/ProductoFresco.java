@@ -15,7 +15,7 @@ public class ProductoFresco extends Producto{
 	@Override
 	public double calcularPrecio() {
 		double precioFinal = peso*getPrecio();
-		
+		precioFinal = (double) Math.round(precioFinal * 100) / 100;
 		return precioFinal;
 	}
 

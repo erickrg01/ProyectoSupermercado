@@ -13,7 +13,7 @@ public class ProductoBebida extends Producto{
 	@Override
 	public double calcularPrecio() {
 		double precioFinal = numBotellas*getPrecio();
-		
+		precioFinal = (double) Math.round(precioFinal * 100) / 100;
 		return precioFinal;
 	}
 	

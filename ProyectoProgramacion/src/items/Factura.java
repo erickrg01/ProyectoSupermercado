@@ -44,18 +44,19 @@ public class Factura {
 		factura+="El precio total de la compra es: " + calcularTotal();
 		return factura;
 	}
-	public double calcularTotal () {
-		double total = 0;
-		for (int i = 0; i < listaCompra.size(); i++) {
-			total +=listaCompra.get(i).calcularPrecio();
-		}
-		if(descuentoFamilia) {
-			total=total-(total*0.2);
-		}
-		if(descuentoTarjeta) {
-			total=total-(total*0.15);
-		}
-		return total;
+	public double calcularTotal() {
+	    double total = 0;
+	    for (int i = 0; i < listaCompra.size(); i++) {
+	        total += listaCompra.get(i).calcularPrecio();
+	    }
+	    if (descuentoFamilia) {
+	        total -= total * 0.2;
+	    }
+	    if (descuentoTarjeta) {
+	        total -= total * 0.15;
+	    }
+	    // Redondear a dos decimales
+	    total = (double) Math.round(total * 100) / 100;
+	    return total;
 	}
-	
 }
