@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -67,6 +68,8 @@ public class Supermercado extends JFrame {
 	private JButton btnBorrarUsuario;
 	private JButton btnUsuarios;
 	private JTextPane txPUsers;
+	private JCheckBox chckbxDescuentoFamilia;
+	private JCheckBox chckbxDescuentoTarjeta;
 
 	/**
 	 * Launch the application.
@@ -388,6 +391,14 @@ public class Supermercado extends JFrame {
 		txPUsers.setEditable(false);
 		txPUsers.setBounds(44, 38, 312, 375);
 		pUsuarios.add(txPUsers);
+		
+		chckbxDescuentoFamilia = new JCheckBox("Familia numerosa");
+		chckbxDescuentoFamilia.setBounds(591, 304, 164, 23);
+		pFactura.add(chckbxDescuentoFamilia);
+		
+		chckbxDescuentoTarjeta = new JCheckBox("Tarjeta Super");
+		chckbxDescuentoTarjeta.setBounds(781, 304, 129, 23);
+		pFactura.add(chckbxDescuentoTarjeta);
 
 	}
 	public void crearEventos() {
@@ -579,6 +590,22 @@ public class Supermercado extends JFrame {
 				txFactura.setText(nuevaFactura.mostrarListaCompra());
 			}
 		});
+		
+		chckbxDescuentoFamilia.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	        	boolean seleccionado = chckbxDescuentoFamilia.isSelected();
+	        	nuevaFactura.setDescuentoFamilia(seleccionado);
+	        	btnVerFactura.doClick();
+	        }
+	    });
+
+		chckbxDescuentoTarjeta.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	        	boolean seleccionado = chckbxDescuentoTarjeta.isSelected();
+	        	nuevaFactura.setDescuentoTarjeta(seleccionado);
+	        	btnVerFactura.doClick();
+	        }
+	    });
 
 	}
 }

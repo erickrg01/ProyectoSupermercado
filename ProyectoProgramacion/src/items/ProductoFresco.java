@@ -1,5 +1,7 @@
 package items;
 
+import java.text.DecimalFormat;
+
 public class ProductoFresco extends Producto{
 	private double peso;
 	
@@ -12,7 +14,9 @@ public class ProductoFresco extends Producto{
 
 	@Override
 	public double calcularPrecio() {
-		return peso*getPrecio();
+		double precioFinal = peso*getPrecio();
+		
+		return precioFinal;
 	}
 
 	@Override
