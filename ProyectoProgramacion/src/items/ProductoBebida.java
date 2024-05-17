@@ -1,5 +1,7 @@
 package items;
 
+import java.text.DecimalFormat;
+
 public class ProductoBebida extends Producto{
 	private int numBotellas;
 
@@ -10,7 +12,9 @@ public class ProductoBebida extends Producto{
 
 	@Override
 	public double calcularPrecio() {
-		return numBotellas*getPrecio();
+		double precioFinal = numBotellas*getPrecio();
+		precioFinal = (double) Math.round(precioFinal * 100) / 100;
+		return precioFinal;
 	}
 	
 	@Override

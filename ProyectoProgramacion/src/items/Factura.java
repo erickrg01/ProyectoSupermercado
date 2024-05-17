@@ -2,10 +2,20 @@ package items;
 import java.util.ArrayList;
 public class Factura {
 	private ArrayList<Producto> listaCompra;
+	private boolean descuentoFamilia;
+	private boolean descuentoTarjeta;
 
 	public Factura() {
 		super();
 		listaCompra = new ArrayList<Producto>() ;
+	}
+	
+	public void setDescuentoFamilia(boolean descuentoFamilia) {
+		this.descuentoFamilia = descuentoFamilia;
+	}
+
+	public void setDescuentoTarjeta(boolean descuentoTarjeta) {
+		this.descuentoTarjeta = descuentoTarjeta;
 	}
 	
 	public void añadirProducto(Producto p) {
@@ -31,14 +41,22 @@ public class Factura {
 				factura += listaCompra.get(i)+"\n";
 			}
 		}
+		factura+="El precio total de la compra es: " + calcularTotal();
 		return factura;
 	}
-	public void calcularTotal () {
-		double total = 0;
-		for (int i = 0; i < listaCompra.size(); i++) {
-			total +=listaCompra.get(i).calcularPrecio();
-		}
-		System.out.println("El precio total de la compra es: "+total);
+	public double calcularTotal() {
+	    double total = 0;
+	    for (int i = 0; i < listaCompra.size(); i++) {
+	        total += listaCompra.get(i).calcularPrecio();
+	    }
+	    if (descuentoFamilia) {
+	        total -= total * 0.2;
+	    }
+	    if (descuentoTarjeta) {
+	        total -= total * 0.15;
+	    }
+	    // Redondear a dos decimales
+	    total = (double) Math.round(total * 100) / 100;
+	    return total;
 	}
-	
 }
