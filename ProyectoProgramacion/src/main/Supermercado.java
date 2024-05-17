@@ -14,6 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -113,6 +116,7 @@ public class Supermercado extends JFrame {
 			if (option == JOptionPane.OK_OPTION) {
 				char[] passwordChars = passwordField.getPassword();
 				String contraseñaIngresada = new String(passwordChars);
+				contraseñaIngresada = DigestUtils.sha256Hex(contraseñaIngresada);
 
 				boolean credencialesCorrectas = false;
 
@@ -474,7 +478,8 @@ public class Supermercado extends JFrame {
 				try {
 					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
 					bufferedWriter.newLine();
-					String input = txUsuario.getText()+","+txPassword.getText();
+					String contraseña = DigestUtils.sha256Hex(txPassword.getText());
+					String input = txUsuario.getText()+","+contraseña;
 					bufferedWriter.write(input);
 					bufferedWriter.close();
 
