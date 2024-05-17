@@ -73,6 +73,18 @@ public class Supermercado extends JFrame {
 	private JTextPane txPUsers;
 	private JCheckBox chckbxDescuentoFamilia;
 	private JCheckBox chckbxDescuentoTarjeta;
+	private JButton btnPavo;
+	private JButton btnEmperador;
+	private JButton btnSalmon;
+	private JButton btnMerluza;
+	private JButton btnSandia;
+	private JButton btnCoca;
+	private JButton btnBrocoli;
+	private JButton btnZanahorias;
+	private JButton btnPimientos;
+	private JButton btnPlatano;
+	private JButton btnMandarinas;
+	private JButton btnZumo;
 
 	/**
 	 * Launch the application.
@@ -233,6 +245,7 @@ public class Supermercado extends JFrame {
 		pCarne = new JPanel();
 		tabbedPane.addTab("Carne", null, pCarne, null);
 		pCarne.setLayout(null);
+		
 
 		pPescado = new JPanel();
 		tabbedPane.addTab("Pescado", null, pPescado, null);
@@ -245,51 +258,115 @@ public class Supermercado extends JFrame {
 		pFruta = new JPanel();
 		tabbedPane.addTab("Fruta", null, pFruta, null);
 		pFruta.setLayout(null);
-
-		btnTernera = new JButton("Ternera");
-		btnTernera.setBounds(281, 86, 117, 25);
-		pCarne.add(btnTernera);
-
-		txKilogramos = new JTextField();
-		txKilogramos.setBounds(391, 148, 114, 19);
-		pCarne.add(txKilogramos);
-		txKilogramos.setColumns(10);
-
-		JLabel lblKg = new JLabel("Kg");
-		lblKg.setBounds(344, 149, 29, 17);
-		pCarne.add(lblKg);
-
-		btnPollo = new JButton("");
-		btnPollo.setIcon(new ImageIcon("imagenes_supermercado/pollobt.jpg"));
-		btnPollo.setBounds(529, 57, 130, 100);
-		pCarne.add(btnPollo);
-
-		btnVolver1 = new JButton("Volver");
-		btnVolver1.setBounds(388, 219, 117, 25);
-		pCarne.add(btnVolver1);
-
-		btnVolverPescado = new JButton("Volver");
-		btnVolverPescado.setBounds(512, 340, 117, 25);
-		pPescado.add(btnVolverPescado);
-
-		btnVolverVerdura = new JButton("Volver");
-		btnVolverVerdura.setBounds(388, 219, 117, 25);
-		pVerdura.add(btnVolverVerdura);
-
-		btnVolverFruta = new JButton("Volver");
-		btnVolverFruta.setBounds(388, 219, 117, 25);
-		pFruta.add(btnVolverFruta);
-
+		
 		pBebidas = new JPanel();
 		tabbedPane.addTab("Bebidas", null, pBebidas, null);
 		pBebidas.setLayout(null);
 
-		btnAgua = new JButton("Agua");
-		btnAgua.setBounds(282, 102, 117, 25);
-		pBebidas.add(btnAgua);
+		txKilogramos = new JTextField();
+		txKilogramos.setBounds(563, 192, 114, 19);
+		pCarne.add(txKilogramos);
+		txKilogramos.setColumns(10);
 
-		btnVolver2 = new JButton("Volver 2");
-		btnVolver2.setBounds(402, 232, 117, 25);
+		JLabel lblKg = new JLabel("Kg");
+		lblKg.setBounds(687, 193, 29, 17);
+		pCarne.add(lblKg);
+
+		btnTernera= new JButton("");
+		btnTernera.setIcon(new ImageIcon("imagenes_supermercado/ternera.jpg"));
+		btnTernera.setBounds(372, 57, 130, 100);
+		pCarne.add(btnTernera);
+
+		btnPollo = new JButton("");
+		btnPollo.setIcon(new ImageIcon("imagenes_supermercado/pollobt.jpg"));
+		btnPollo.setBounds(548, 57, 130, 100);
+		pCarne.add(btnPollo);
+		
+		btnPavo = new JButton("");
+		btnPavo.setIcon(new ImageIcon("imagenes_supermercado/pavo.jpeg"));
+		btnPavo.setBounds(721, 57, 130, 100);
+		pCarne.add(btnPavo);
+		
+		btnEmperador = new JButton("");
+		btnEmperador.setIcon(new ImageIcon("imagenes_supermercado/emperador.jpg"));
+		btnEmperador.setBounds(372, 57, 130, 100);
+		pPescado.add(btnEmperador);
+
+		
+		btnSalmon = new JButton("");
+		btnSalmon.setIcon(new ImageIcon("imagenes_supermercado/salmon.jpg"));
+		btnSalmon.setBounds(548, 57, 130, 100);
+		pPescado.add(btnSalmon);
+		
+		btnMerluza = new JButton("");
+		btnMerluza.setIcon(new ImageIcon("imagenes_supermercado/merluza.jpg"));
+		btnMerluza.setBounds(721, 57, 130, 100);
+		pPescado.add(btnMerluza);
+		
+		btnSandia = new JButton("");
+		btnSandia.setIcon(new ImageIcon("imagenes_supermercado/sandia.jpg"));
+		btnSandia.setBounds(372, 57, 130, 100);
+		pFruta.add(btnSandia);
+		
+		btnPlatano = new JButton("");
+		btnPlatano.setIcon(new ImageIcon("imagenes_supermercado/platanos.jpg"));
+		btnPlatano.setBounds(548, 57, 130, 100);
+		pFruta.add(btnPlatano);
+		
+		btnMandarinas = new JButton("");
+		btnMandarinas.setIcon(new ImageIcon("imagenes_supermercado/mandarinas.jpg"));
+		btnMandarinas.setBounds(721, 57, 130, 100);
+		pFruta.add(btnMandarinas);
+		
+		btnZanahorias = new JButton("");
+		btnZanahorias.setIcon(new ImageIcon("imagenes_supermercado/zanahorias.png"));
+		btnZanahorias.setBounds(372, 57, 130, 100);
+		pVerdura.add(btnZanahorias);
+		
+		btnPimientos = new JButton("");
+		btnPimientos.setIcon(new ImageIcon("imagenes_supermercado/pimientos.jpg"));
+		btnPimientos.setBounds(548, 57, 130, 100);
+		pVerdura.add(btnPimientos);
+		
+		btnBrocoli = new JButton("");
+		btnBrocoli.setIcon(new ImageIcon("imagenes_supermercado/brocoli.jpeg"));
+		btnBrocoli.setBounds(721, 57, 130, 100);
+		pVerdura.add(btnBrocoli);
+		
+		
+		btnAgua = new JButton("");
+		btnAgua.setIcon(new ImageIcon("imagenes_supermercado/agua.jpg"));
+		btnAgua.setBounds(372, 57, 130, 100);
+		pBebidas.add(btnAgua);
+		
+		btnCoca = new JButton("");
+		btnCoca.setIcon(new ImageIcon("imagenes_supermercado/cocacola.jpg"));
+		btnCoca.setBounds(548, 57, 130, 100);
+		pBebidas.add(btnCoca);
+		
+		btnZumo = new JButton("");
+		btnZumo.setIcon(new ImageIcon("imagenes_supermercado/zumo.jpg"));
+		btnZumo.setBounds(721, 57, 130, 100);
+		pBebidas.add(btnZumo);
+		
+		btnVolver1 = new JButton("Volver");
+		btnVolver1.setBounds(561, 257, 117, 25);
+		pCarne.add(btnVolver1);
+
+		btnVolverPescado = new JButton("Volver");
+		btnVolverPescado.setBounds(561, 257, 117, 25);
+		pPescado.add(btnVolverPescado);
+
+		btnVolverVerdura = new JButton("Volver");
+		btnVolverVerdura.setBounds(561, 257, 117, 25);
+		pVerdura.add(btnVolverVerdura);
+
+		btnVolverFruta = new JButton("Volver");
+		btnVolverFruta.setBounds(561, 257, 117, 25);
+		pFruta.add(btnVolverFruta);
+
+		btnVolver2 = new JButton("Volver");
+		btnVolver2.setBounds(561, 257, 117, 25);
 		pBebidas.add(btnVolver2);
 
 		txNumBotellas = new JTextField();
