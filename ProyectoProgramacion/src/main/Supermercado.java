@@ -85,6 +85,9 @@ public class Supermercado extends JFrame {
 	private JButton btnPlatano;
 	private JButton btnMandarinas;
 	private JButton btnZumo;
+	private JTextField txKilogramosPescado;
+	private JTextField txKilogramosVerdura;
+	private JTextField txKilogramosFruta;
 
 	/**
 	 * Launch the application.
@@ -245,7 +248,6 @@ public class Supermercado extends JFrame {
 		pCarne = new JPanel();
 		tabbedPane.addTab("Carne", null, pCarne, null);
 		pCarne.setLayout(null);
-		
 
 		pPescado = new JPanel();
 		tabbedPane.addTab("Pescado", null, pPescado, null);
@@ -267,6 +269,21 @@ public class Supermercado extends JFrame {
 		txKilogramos.setBounds(563, 192, 114, 19);
 		pCarne.add(txKilogramos);
 		txKilogramos.setColumns(10);
+		
+		txKilogramosPescado = new JTextField();
+		txKilogramosPescado.setBounds(563, 192, 114, 19);
+		pPescado.add(txKilogramosPescado);
+		txKilogramosPescado.setColumns(10);
+		
+		txKilogramosVerdura = new JTextField();
+		txKilogramosVerdura.setBounds(563, 192, 114, 19);
+		pVerdura.add(txKilogramosVerdura);
+		txKilogramosVerdura.setColumns(10);
+		
+		txKilogramosFruta = new JTextField();
+		txKilogramosFruta.setBounds(563, 192, 114, 19);
+		pFruta.add(txKilogramosFruta);
+		txKilogramosFruta.setColumns(10);
 
 		JLabel lblKg = new JLabel("Kg");
 		lblKg.setBounds(687, 193, 29, 17);
@@ -370,12 +387,12 @@ public class Supermercado extends JFrame {
 		pBebidas.add(btnVolver2);
 
 		txNumBotellas = new JTextField();
-		txNumBotellas.setBounds(384, 172, 114, 19);
+		txNumBotellas.setBounds(563, 192, 114, 19);
 		pBebidas.add(txNumBotellas);
 		txNumBotellas.setColumns(10);
 
 		lblNumeroDeBotellas = new JLabel("Numero de Botellas");
-		lblNumeroDeBotellas.setBounds(202, 174, 149, 15);
+		lblNumeroDeBotellas.setBounds(430, 195, 123, 15);
 		pBebidas.add(lblNumeroDeBotellas);
 
 		//FOTOS
@@ -494,12 +511,12 @@ public class Supermercado extends JFrame {
 				tabbedPane.setSelectedIndex(2);
 			}
 		});
-		btnVerdura.addActionListener(new ActionListener() {
+		btnFruta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(3);
 			}
 		});
-		btnFruta.addActionListener(new ActionListener() {
+		btnVerdura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(4);
 			}
@@ -664,11 +681,120 @@ public class Supermercado extends JFrame {
 				nuevaFactura.añadirProducto(pf);
 			}
 		});
+		
+		btnPavo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 6.5;
+				double peso = Double.parseDouble(txKilogramos.getText());
+				ProductoFresco pf = new ProductoFresco("Pavo",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnEmperador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 14.49;
+				double peso = Double.parseDouble(txKilogramosPescado.getText());
+				ProductoFresco pf = new ProductoFresco("Emperador",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnSalmon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 12.33;
+				double peso = Double.parseDouble(txKilogramosPescado.getText());
+				ProductoFresco pf = new ProductoFresco("Salmón",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnMerluza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 8.78;
+				double peso = Double.parseDouble(txKilogramosPescado.getText());
+				ProductoFresco pf = new ProductoFresco("Merluza",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnBrocoli.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 2.78;
+				double peso = Double.parseDouble(txKilogramosVerdura.getText());
+				ProductoFresco pf = new ProductoFresco("Brocoli",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnPimientos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 1.56;
+				double peso = Double.parseDouble(txKilogramosVerdura.getText());
+				ProductoFresco pf = new ProductoFresco("Pimientos",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnZanahorias.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 2.1;
+				double peso = Double.parseDouble(txKilogramosVerdura.getText());
+				ProductoFresco pf = new ProductoFresco("Zanahorias",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnMandarinas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 3.25;
+				double peso = Double.parseDouble(txKilogramosFruta.getText());
+				ProductoFresco pf = new ProductoFresco("Mandarinas",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnSandia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 4.3;
+				double peso = Double.parseDouble(txKilogramosFruta.getText());
+				ProductoFresco pf = new ProductoFresco("Sandía",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnPlatano.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 2.2;
+				double peso = Double.parseDouble(txKilogramosFruta.getText());
+				ProductoFresco pf = new ProductoFresco("Plátanos",precio,peso);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
 		btnAgua.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double precio = 0.65;
 				int numBotellas = Integer.parseInt(txNumBotellas.getText());
 				ProductoBebida pf = new ProductoBebida("Agua",precio,numBotellas);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnCoca.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 0.8;
+				int numBotellas = Integer.parseInt(txNumBotellas.getText());
+				ProductoBebida pf = new ProductoBebida("Coca-Cola",precio,numBotellas);
+				nuevaFactura.añadirProducto(pf);
+			}
+		});
+		
+		btnZumo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double precio = 0.75;
+				int numBotellas = Integer.parseInt(txNumBotellas.getText());
+				ProductoBebida pf = new ProductoBebida("Zumo",precio,numBotellas);
 				nuevaFactura.añadirProducto(pf);
 			}
 		});
