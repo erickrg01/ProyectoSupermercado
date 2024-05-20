@@ -29,6 +29,7 @@ import items.*;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JLayeredPane;
+import java.awt.Font;
 
 
 public class Supermercado extends JFrame {
@@ -179,13 +180,13 @@ public class Supermercado extends JFrame {
 	}
 	public void crearGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(200, 30, 1400, 1000);
+		setBounds(200, 30, 1000, 960);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		tabbedPane.setEnabled(false);
-		tabbedPane.setBounds(100, 0, 1200, 1000);
+		tabbedPane.setBounds(0, 0, 1000, 960);
 		contentPane.add(tabbedPane);
 
 		JPanel Inicio = new JPanel();
@@ -222,23 +223,23 @@ public class Supermercado extends JFrame {
 		Inicio.add(btnVerFactura);
 		
 		JLabel lblCarne = new JLabel("Carne");
-		lblCarne.setBounds(159, 237, 47, 25);
+		lblCarne.setBounds(169, 236, 38, 25);
 		Inicio.add(lblCarne);
 		
 		JLabel lblPescado = new JLabel("Pescado");
-		lblPescado.setBounds(292, 242, 70, 15);
+		lblPescado.setBounds(305, 242, 54, 15);
 		Inicio.add(lblPescado);
 		
 		JLabel lblFruta = new JLabel("Fruta");
-		lblFruta.setBounds(450, 242, 47, 15);
+		lblFruta.setBounds(455, 242, 38, 15);
 		Inicio.add(lblFruta);
 		
 		JLabel lblVerdura = new JLabel("Verdura");
-		lblVerdura.setBounds(585, 242, 70, 15);
+		lblVerdura.setBounds(591, 242, 54, 15);
 		Inicio.add(lblVerdura);
 		
 		JLabel lblBebida = new JLabel("Bebida");
-		lblBebida.setBounds(722, 242, 54, 15);
+		lblBebida.setBounds(740, 242, 54, 15);
 		Inicio.add(lblBebida);
 		
 		btnUsuarios = new JButton("Usuarios");
@@ -266,133 +267,147 @@ public class Supermercado extends JFrame {
 		pBebidas.setLayout(null);
 
 		txKilogramos = new JTextField();
-		txKilogramos.setBounds(563, 192, 114, 19);
+		txKilogramos.setBounds(846, 373, 70, 19);
 		pCarne.add(txKilogramos);
 		txKilogramos.setColumns(10);
 		
 		txKilogramosPescado = new JTextField();
-		txKilogramosPescado.setBounds(563, 192, 114, 19);
+		txKilogramosPescado.setBounds(846, 373, 70, 19);
 		pPescado.add(txKilogramosPescado);
 		txKilogramosPescado.setColumns(10);
 		
 		txKilogramosVerdura = new JTextField();
-		txKilogramosVerdura.setBounds(563, 192, 114, 19);
+		txKilogramosVerdura.setBounds(846, 373, 70, 19);
 		pVerdura.add(txKilogramosVerdura);
 		txKilogramosVerdura.setColumns(10);
 		
 		txKilogramosFruta = new JTextField();
-		txKilogramosFruta.setBounds(563, 192, 114, 19);
+		txKilogramosFruta.setBounds(846, 373, 70, 19);
 		pFruta.add(txKilogramosFruta);
 		txKilogramosFruta.setColumns(10);
 
 		JLabel lblKg = new JLabel("Kg");
-		lblKg.setBounds(687, 193, 29, 17);
+		lblKg.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblKg.setBounds(926, 375, 29, 17);
 		pCarne.add(lblKg);
+		JLabel lblKg2 = new JLabel("Kg");
+		lblKg2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblKg2.setBounds(926, 375, 29, 17);
+		pPescado.add(lblKg2);
+		JLabel lblKg3 = new JLabel("Kg");
+		lblKg3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblKg3.setBounds(926, 375, 29, 17);
+		pVerdura.add(lblKg3);
+		JLabel lblKg4 = new JLabel("Kg");
+		lblKg4.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblKg4.setBounds(926, 375, 29, 17);
+		pFruta.add(lblKg4);
+		
 
 		btnTernera= new JButton("");
 		btnTernera.setIcon(new ImageIcon("imagenes_supermercado/ternera.jpg"));
-		btnTernera.setBounds(372, 57, 130, 100);
+		btnTernera.setBounds(284, 184, 130, 100);
 		pCarne.add(btnTernera);
 
 		btnPollo = new JButton("");
 		btnPollo.setIcon(new ImageIcon("imagenes_supermercado/pollobt.jpg"));
-		btnPollo.setBounds(548, 57, 130, 100);
+		btnPollo.setBounds(284, 425, 130, 100);
 		pCarne.add(btnPollo);
 		
 		btnPavo = new JButton("");
 		btnPavo.setIcon(new ImageIcon("imagenes_supermercado/pavo.jpeg"));
-		btnPavo.setBounds(721, 57, 130, 100);
+		btnPavo.setBounds(284, 647, 130, 100);
 		pCarne.add(btnPavo);
 		
 		btnEmperador = new JButton("");
 		btnEmperador.setIcon(new ImageIcon("imagenes_supermercado/emperador.jpg"));
-		btnEmperador.setBounds(372, 57, 130, 100);
+		btnEmperador.setBounds(284, 184, 130, 100);
 		pPescado.add(btnEmperador);
 
 		
 		btnSalmon = new JButton("");
 		btnSalmon.setIcon(new ImageIcon("imagenes_supermercado/salmon.jpg"));
-		btnSalmon.setBounds(548, 57, 130, 100);
+		btnSalmon.setBounds(284, 425, 130, 100);
 		pPescado.add(btnSalmon);
 		
 		btnMerluza = new JButton("");
 		btnMerluza.setIcon(new ImageIcon("imagenes_supermercado/merluza.jpg"));
-		btnMerluza.setBounds(721, 57, 130, 100);
+		btnMerluza.setBounds(284, 647, 130, 100);
 		pPescado.add(btnMerluza);
 		
 		btnSandia = new JButton("");
 		btnSandia.setIcon(new ImageIcon("imagenes_supermercado/sandia.jpg"));
-		btnSandia.setBounds(372, 57, 130, 100);
+		btnSandia.setBounds(284, 184, 130, 100);
 		pFruta.add(btnSandia);
 		
 		btnPlatano = new JButton("");
 		btnPlatano.setIcon(new ImageIcon("imagenes_supermercado/platanos.jpg"));
-		btnPlatano.setBounds(548, 57, 130, 100);
+		btnPlatano.setBounds(284, 425, 130, 100);
 		pFruta.add(btnPlatano);
 		
 		btnMandarinas = new JButton("");
 		btnMandarinas.setIcon(new ImageIcon("imagenes_supermercado/mandarinas.jpg"));
-		btnMandarinas.setBounds(721, 57, 130, 100);
+		btnMandarinas.setBounds(284, 647, 130, 100);
 		pFruta.add(btnMandarinas);
 		
 		btnZanahorias = new JButton("");
 		btnZanahorias.setIcon(new ImageIcon("imagenes_supermercado/zanahorias.png"));
-		btnZanahorias.setBounds(372, 57, 130, 100);
+		btnZanahorias.setBounds(284, 184, 130, 100);
 		pVerdura.add(btnZanahorias);
 		
 		btnPimientos = new JButton("");
 		btnPimientos.setIcon(new ImageIcon("imagenes_supermercado/pimientos.jpg"));
-		btnPimientos.setBounds(548, 57, 130, 100);
+		btnPimientos.setBounds(284, 425, 130, 100);
 		pVerdura.add(btnPimientos);
 		
 		btnBrocoli = new JButton("");
 		btnBrocoli.setIcon(new ImageIcon("imagenes_supermercado/brocoli.jpeg"));
-		btnBrocoli.setBounds(721, 57, 130, 100);
+		btnBrocoli.setBounds(284, 647, 130, 100);
 		pVerdura.add(btnBrocoli);
 		
 		
 		btnAgua = new JButton("");
 		btnAgua.setIcon(new ImageIcon("imagenes_supermercado/agua.jpg"));
-		btnAgua.setBounds(372, 57, 130, 100);
+		btnAgua.setBounds(284, 184, 130, 100);
 		pBebidas.add(btnAgua);
 		
 		btnCoca = new JButton("");
 		btnCoca.setIcon(new ImageIcon("imagenes_supermercado/cocacola.jpg"));
-		btnCoca.setBounds(548, 57, 130, 100);
+		btnCoca.setBounds(284, 425, 130, 100);
 		pBebidas.add(btnCoca);
 		
 		btnZumo = new JButton("");
 		btnZumo.setIcon(new ImageIcon("imagenes_supermercado/zumo.jpg"));
-		btnZumo.setBounds(721, 57, 130, 100);
+		btnZumo.setBounds(284, 647, 130, 100);
 		pBebidas.add(btnZumo);
 		
 		btnVolver1 = new JButton("Volver");
-		btnVolver1.setBounds(561, 257, 117, 25);
+		btnVolver1.setBounds(846, 425, 100, 25);
 		pCarne.add(btnVolver1);
 
 		btnVolverPescado = new JButton("Volver");
-		btnVolverPescado.setBounds(561, 257, 117, 25);
+		btnVolverPescado.setBounds(846, 425, 100, 25);
 		pPescado.add(btnVolverPescado);
 
 		btnVolverVerdura = new JButton("Volver");
-		btnVolverVerdura.setBounds(561, 257, 117, 25);
+		btnVolverVerdura.setBounds(846, 425, 100, 25);
 		pVerdura.add(btnVolverVerdura);
 
 		btnVolverFruta = new JButton("Volver");
-		btnVolverFruta.setBounds(561, 257, 117, 25);
+		btnVolverFruta.setBounds(846, 425, 100, 25);
 		pFruta.add(btnVolverFruta);
 
 		btnVolver2 = new JButton("Volver");
-		btnVolver2.setBounds(561, 257, 117, 25);
+		btnVolver2.setBounds(846, 425, 100, 25);
 		pBebidas.add(btnVolver2);
 
 		txNumBotellas = new JTextField();
-		txNumBotellas.setBounds(563, 192, 114, 19);
+		txNumBotellas.setBounds(846, 395, 67, 19);
 		pBebidas.add(txNumBotellas);
 		txNumBotellas.setColumns(10);
 
-		lblNumeroDeBotellas = new JLabel("Numero de Botellas");
-		lblNumeroDeBotellas.setBounds(430, 195, 123, 15);
+		lblNumeroDeBotellas = new JLabel("Número de botellas");
+		lblNumeroDeBotellas.setBounds(837, 365, 114, 19);
 		pBebidas.add(lblNumeroDeBotellas);
 
 		//FOTOS
@@ -400,15 +415,15 @@ public class Supermercado extends JFrame {
 		pCarne.setLayout(null);
 
 		JLabel lblFondoCarne = new JLabel();
-		lblFondoCarne.setBounds(0, 0, 1100, 650);
-		lblFondoCarne.setIcon(new ImageIcon("imagenes_supermercado/carne.jpg")); 
+		lblFondoCarne.setBounds(12, 12, 948, 1000);
+		lblFondoCarne.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pCarne.add(lblFondoCarne);
 
 		tabbedPane.addTab("Pescado", null, pPescado, null);
 		pPescado.setLayout(null);
 
 		JLabel lblFondoPescado = new JLabel();
-		lblFondoPescado.setBounds(12, 12, 1171, 911);
+		lblFondoPescado.setBounds(12, 12, 948, 1000);
 		lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pPescado.add(lblFondoPescado);
 
@@ -416,24 +431,24 @@ public class Supermercado extends JFrame {
 		pVerdura.setLayout(null);
 
 		JLabel lblFondoVerdura = new JLabel();
-		lblFondoVerdura.setBounds(0, 0, 1100, 650);
-		lblFondoVerdura.setIcon(new ImageIcon("imagenes_supermercado/verdura.jpg")); 
+		lblFondoVerdura.setBounds(12, 12, 948, 1000);
+		lblFondoVerdura.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pVerdura.add(lblFondoVerdura);
 
 		tabbedPane.addTab("Fruta", null, pFruta, null);
 		pFruta.setLayout(null);
 
 		JLabel lblFondoFruta = new JLabel();
-		lblFondoFruta.setBounds(0, 0, 1100, 600);
-		lblFondoFruta.setIcon(new ImageIcon("imagenes_supermercado/fruta.jpg")); 
+		lblFondoFruta.setBounds(12, 12, 948, 1000);
+		lblFondoFruta.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pFruta.add(lblFondoFruta);
 
 		tabbedPane.addTab("Bebidas", null, pBebidas, null);
 		pBebidas.setLayout(null);
 
 		JLabel lblFondoBebidas = new JLabel();
-		lblFondoBebidas.setBounds(0, 0, 1100, 650);
-		lblFondoBebidas.setIcon(new ImageIcon("imagenes_supermercado/bebidas.jpg")); 
+		lblFondoBebidas.setBounds(12, 12, 948, 1000);
+		lblFondoBebidas.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
 		pBebidas.add(lblFondoBebidas);
 
 		JPanel pFactura = new JPanel();
@@ -581,6 +596,9 @@ public class Supermercado extends JFrame {
 				} catch (IOException excp) {
 					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
 				}
+				JOptionPane.showMessageDialog(null, "Usuario añadido");
+				txUsuario.setText("");
+				txPassword.setText("");
 				btnUsuarios.doClick();
 			}
 		});
@@ -622,6 +640,8 @@ public class Supermercado extends JFrame {
 				} catch (IOException excp) {
 					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
 				}
+		        JOptionPane.showMessageDialog(null, "Usuario borrado");
+				txUsuario.setText("");
 		        btnUsuarios.doClick();
 			}
 		});
@@ -671,6 +691,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramos.getText());
 				ProductoFresco pf = new ProductoFresco("Ternera",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramos.setText("");
 			}
 		});
 		btnPollo.addActionListener(new ActionListener() {
@@ -679,6 +701,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramos.getText());
 				ProductoFresco pf = new ProductoFresco("Pollo",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramos.setText("");
 			}
 		});
 		
@@ -688,6 +712,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramos.getText());
 				ProductoFresco pf = new ProductoFresco("Pavo",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramos.setText("");
 			}
 		});
 		
@@ -697,6 +723,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosPescado.getText());
 				ProductoFresco pf = new ProductoFresco("Emperador",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosPescado.setText("");
 			}
 		});
 		
@@ -706,6 +734,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosPescado.getText());
 				ProductoFresco pf = new ProductoFresco("Salmón",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosPescado.setText("");
 			}
 		});
 		
@@ -715,6 +745,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosPescado.getText());
 				ProductoFresco pf = new ProductoFresco("Merluza",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosPescado.setText("");
 			}
 		});
 		
@@ -724,6 +756,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosVerdura.getText());
 				ProductoFresco pf = new ProductoFresco("Brocoli",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosVerdura.setText("");
 			}
 		});
 		
@@ -733,6 +767,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosVerdura.getText());
 				ProductoFresco pf = new ProductoFresco("Pimientos",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosVerdura.setText("");
 			}
 		});
 		
@@ -742,6 +778,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosVerdura.getText());
 				ProductoFresco pf = new ProductoFresco("Zanahorias",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosVerdura.setText("");
 			}
 		});
 		
@@ -751,6 +789,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosFruta.getText());
 				ProductoFresco pf = new ProductoFresco("Mandarinas",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosFruta.setText("");
 			}
 		});
 		
@@ -760,6 +800,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosFruta.getText());
 				ProductoFresco pf = new ProductoFresco("Sandía",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosFruta.setText("");
 			}
 		});
 		
@@ -769,6 +811,8 @@ public class Supermercado extends JFrame {
 				double peso = Double.parseDouble(txKilogramosFruta.getText());
 				ProductoFresco pf = new ProductoFresco("Plátanos",precio,peso);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txKilogramosFruta.setText("");
 			}
 		});
 		
@@ -778,6 +822,8 @@ public class Supermercado extends JFrame {
 				int numBotellas = Integer.parseInt(txNumBotellas.getText());
 				ProductoBebida pf = new ProductoBebida("Agua",precio,numBotellas);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txNumBotellas.setText("");
 			}
 		});
 		
@@ -787,6 +833,8 @@ public class Supermercado extends JFrame {
 				int numBotellas = Integer.parseInt(txNumBotellas.getText());
 				ProductoBebida pf = new ProductoBebida("Coca-Cola",precio,numBotellas);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txNumBotellas.setText("");
 			}
 		});
 		
@@ -796,6 +844,8 @@ public class Supermercado extends JFrame {
 				int numBotellas = Integer.parseInt(txNumBotellas.getText());
 				ProductoBebida pf = new ProductoBebida("Zumo",precio,numBotellas);
 				nuevaFactura.añadirProducto(pf);
+				JOptionPane.showMessageDialog(null, "Producto añadido");
+				txNumBotellas.setText("");
 			}
 		});
 		btnQuitarProducto.addActionListener(new ActionListener() {
