@@ -28,8 +28,8 @@ import javax.swing.JTextPane;
 import items.*;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JLayeredPane;
 import java.awt.Font;
+import java.awt.Color;
 
 
 public class Supermercado extends JFrame {
@@ -67,7 +67,6 @@ public class Supermercado extends JFrame {
 	private AbstractButton btnVolverFruta;
 	private JPanel pUsuarios;
 	private JTextField txUsuario;
-	private JTextField txPassword;
 	private JButton btnAgregarUsuario;
 	private JButton btnBorrarUsuario;
 	private JButton btnUsuarios;
@@ -89,6 +88,25 @@ public class Supermercado extends JFrame {
 	private JTextField txKilogramosPescado;
 	private JTextField txKilogramosVerdura;
 	private JTextField txKilogramosFruta;
+	private JButton btnVolverUsuario;
+	private JLabel lblPolloN;
+	private JLabel lblPavoN;
+	private JLabel lblEmperadorN;
+	private JLabel lblSalmonN;
+	private JLabel lblMerluzaN;
+	private JLabel lblZanahoriasN;
+	private JLabel lblPimientosN;
+	private JLabel lblBrocoliN;
+	private JLabel lblSandiaN;
+	private JLabel lblPlantanoN;
+	private JLabel lblMandarinasN;
+	private JLabel lblAguaN;
+	private JLabel lblCocaN;
+	private JLabel lblZumoN;
+	private JPasswordField passwordF;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
 
 	/**
 	 * Launch the application.
@@ -204,12 +222,12 @@ public class Supermercado extends JFrame {
 		Inicio.add(btnPescado);
 
 		btnVerdura = new JButton("");
-		btnVerdura.setIcon(new ImageIcon("imagenes_supermercado/multiverdura.jpg"));
+		btnVerdura.setIcon(new ImageIcon("imagenes_supermercado/multifruta.jpg"));
 		btnVerdura.setBounds(402, 125, 130, 100);
 		Inicio.add(btnVerdura);
 
 		btnFruta = new JButton("");
-		btnFruta.setIcon(new ImageIcon("imagenes_supermercado/multifruta.jpg"));
+		btnFruta.setIcon(new ImageIcon("imagenes_supermercado/multiverdura.jpg"));
 		btnFruta.setBounds(544, 125, 130, 100);
 		Inicio.add(btnFruta);
 
@@ -315,7 +333,7 @@ public class Supermercado extends JFrame {
 		pCarne.add(btnPollo);
 		
 		btnPavo = new JButton("");
-		btnPavo.setIcon(new ImageIcon("imagenes_supermercado/pavo.jpeg"));
+		btnPavo.setIcon(new ImageIcon("imagenes_supermercado/pavo.jpg"));
 		btnPavo.setBounds(284, 647, 130, 100);
 		pCarne.add(btnPavo);
 		
@@ -367,18 +385,18 @@ public class Supermercado extends JFrame {
 		
 		
 		btnAgua = new JButton("");
-		btnAgua.setIcon(new ImageIcon("imagenes_supermercado/agua.jpg"));
-		btnAgua.setBounds(284, 184, 130, 100);
+		btnAgua.setIcon(new ImageIcon("imagenes_supermercado/agua.png"));
+		btnAgua.setBounds(284, 137, 67, 147);
 		pBebidas.add(btnAgua);
 		
 		btnCoca = new JButton("");
 		btnCoca.setIcon(new ImageIcon("imagenes_supermercado/cocacola.jpg"));
-		btnCoca.setBounds(284, 425, 130, 100);
+		btnCoca.setBounds(284, 365, 67, 147);
 		pBebidas.add(btnCoca);
 		
 		btnZumo = new JButton("");
 		btnZumo.setIcon(new ImageIcon("imagenes_supermercado/zumo.jpg"));
-		btnZumo.setBounds(284, 647, 130, 100);
+		btnZumo.setBounds(284, 600, 67, 147);
 		pBebidas.add(btnZumo);
 		
 		btnVolver1 = new JButton("Volver");
@@ -413,43 +431,118 @@ public class Supermercado extends JFrame {
 		//FOTOS
 		tabbedPane.addTab("Carne", null, pCarne, null);
 		pCarne.setLayout(null);
-
-		JLabel lblFondoCarne = new JLabel();
-		lblFondoCarne.setBounds(12, 12, 948, 1000);
-		lblFondoCarne.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
-		pCarne.add(lblFondoCarne);
+		
+		JLabel lblTerneraN = new JLabel("Ternera");
+		lblTerneraN.setForeground(new Color(255, 255, 255));
+		lblTerneraN.setBounds(325, 295, 46, 14);
+		pCarne.add(lblTerneraN);
+		
+		lblPolloN = new JLabel("Pollo");
+		lblPolloN.setForeground(new Color(255, 255, 255));
+		lblPolloN.setBounds(325, 549, 46, 14);
+		pCarne.add(lblPolloN);
+		
+		lblPavoN = new JLabel("Pavo");
+		lblPavoN.setForeground(new Color(255, 255, 255));
+		lblPavoN.setBounds(325, 771, 46, 14);
+		pCarne.add(lblPavoN);
+		
+				JLabel lblFondoCarne = new JLabel();
+				lblFondoCarne.setBounds(12, 12, 948, 1000);
+				lblFondoCarne.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
+				pCarne.add(lblFondoCarne);
 
 		tabbedPane.addTab("Pescado", null, pPescado, null);
 		pPescado.setLayout(null);
-
-		JLabel lblFondoPescado = new JLabel();
-		lblFondoPescado.setBounds(12, 12, 948, 1000);
-		lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
-		pPescado.add(lblFondoPescado);
+		
+		lblEmperadorN = new JLabel("Emperador");
+		lblEmperadorN.setForeground(new Color(255, 255, 255));
+		lblEmperadorN.setBounds(325, 295, 64, 14);
+		pPescado.add(lblEmperadorN);
+				
+				lblSalmonN = new JLabel("Salmón");
+				lblSalmonN.setForeground(new Color(255, 255, 255));
+				lblSalmonN.setBounds(325, 536, 46, 14);
+				pPescado.add(lblSalmonN);
+						
+						lblMerluzaN = new JLabel("Merluza");
+						lblMerluzaN.setForeground(new Color(255, 255, 255));
+						lblMerluzaN.setBounds(325, 758, 46, 14);
+						pPescado.add(lblMerluzaN);
+						
+								JLabel lblFondoPescado = new JLabel();
+								lblFondoPescado.setBounds(12, 12, 948, 1000);
+								lblFondoPescado.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
+								pPescado.add(lblFondoPescado);
 
 		tabbedPane.addTab("Verdura", null, pVerdura, null);
 		pVerdura.setLayout(null);
-
-		JLabel lblFondoVerdura = new JLabel();
-		lblFondoVerdura.setBounds(12, 12, 948, 1000);
-		lblFondoVerdura.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
-		pVerdura.add(lblFondoVerdura);
+		
+		lblZanahoriasN = new JLabel("Zanahorias");
+		lblZanahoriasN.setForeground(new Color(255, 255, 255));
+		lblZanahoriasN.setBounds(318, 295, 70, 14);
+		pVerdura.add(lblZanahoriasN);
+		
+		lblPimientosN = new JLabel("Pimientos");
+		lblPimientosN.setForeground(new Color(255, 255, 255));
+		lblPimientosN.setBounds(318, 537, 70, 14);
+		pVerdura.add(lblPimientosN);
+		
+		lblBrocoliN = new JLabel("Brocoli");
+		lblBrocoliN.setForeground(new Color(255, 255, 255));
+		lblBrocoliN.setBounds(329, 758, 46, 14);
+		pVerdura.add(lblBrocoliN);
+		
+				JLabel lblFondoVerdura = new JLabel();
+				lblFondoVerdura.setBounds(12, 12, 948, 1000);
+				lblFondoVerdura.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
+				pVerdura.add(lblFondoVerdura);
 
 		tabbedPane.addTab("Fruta", null, pFruta, null);
 		pFruta.setLayout(null);
-
-		JLabel lblFondoFruta = new JLabel();
-		lblFondoFruta.setBounds(12, 12, 948, 1000);
-		lblFondoFruta.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
-		pFruta.add(lblFondoFruta);
+		
+		lblSandiaN = new JLabel("Sandía");
+		lblSandiaN.setForeground(new Color(255, 255, 255));
+		lblSandiaN.setBounds(329, 295, 46, 14);
+		pFruta.add(lblSandiaN);
+		
+		lblPlantanoN = new JLabel("Plátano");
+		lblPlantanoN.setForeground(new Color(255, 255, 255));
+		lblPlantanoN.setBounds(329, 536, 46, 14);
+		pFruta.add(lblPlantanoN);
+		
+		lblMandarinasN = new JLabel("Mandarinas");
+		lblMandarinasN.setForeground(new Color(255, 255, 255));
+		lblMandarinasN.setBounds(322, 758, 75, 14);
+		pFruta.add(lblMandarinasN);
+		
+				JLabel lblFondoFruta = new JLabel();
+				lblFondoFruta.setBounds(12, 12, 948, 1000);
+				lblFondoFruta.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
+				pFruta.add(lblFondoFruta);
 
 		tabbedPane.addTab("Bebidas", null, pBebidas, null);
 		pBebidas.setLayout(null);
-
-		JLabel lblFondoBebidas = new JLabel();
-		lblFondoBebidas.setBounds(12, 12, 948, 1000);
-		lblFondoBebidas.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
-		pBebidas.add(lblFondoBebidas);
+		
+		lblAguaN = new JLabel("Agua");
+		lblAguaN.setForeground(new Color(255, 255, 255));
+		lblAguaN.setBounds(294, 295, 46, 14);
+		pBebidas.add(lblAguaN);
+		
+		lblCocaN = new JLabel("Coca Cola");
+		lblCocaN.setForeground(new Color(255, 255, 255));
+		lblCocaN.setBounds(294, 536, 58, 14);
+		pBebidas.add(lblCocaN);
+		
+		lblZumoN = new JLabel("Zumo");
+		lblZumoN.setForeground(new Color(255, 255, 255));
+		lblZumoN.setBounds(294, 758, 46, 14);
+		pBebidas.add(lblZumoN);
+		
+				JLabel lblFondoBebidas = new JLabel();
+				lblFondoBebidas.setBounds(12, 12, 948, 1000);
+				lblFondoBebidas.setIcon(new ImageIcon("imagenes_supermercado/estanteria.jpg")); 
+				pBebidas.add(lblFondoBebidas);
 
 		JPanel pFactura = new JPanel();
 		tabbedPane.addTab("Factura", null, pFactura, null);
@@ -495,15 +588,30 @@ public class Supermercado extends JFrame {
 		pUsuarios.add(txUsuario);
 		txUsuario.setColumns(10);
 		
-		txPassword = new JTextField();
-		txPassword.setBounds(471, 176, 114, 19);
-		pUsuarios.add(txPassword);
-		txPassword.setColumns(10);
-		
 		txPUsers = new JTextPane();
 		txPUsers.setEditable(false);
-		txPUsers.setBounds(44, 38, 312, 375);
+		txPUsers.setBounds(44, 67, 312, 375);
 		pUsuarios.add(txPUsers);
+		
+		btnVolverUsuario = new JButton("Volver a inicio");
+		btnVolverUsuario.setBounds(672, 293, 114, 23);
+		pUsuarios.add(btnVolverUsuario);
+		
+		passwordF = new JPasswordField();
+		passwordF.setBounds(471, 186, 114, 20);
+		pUsuarios.add(passwordF);
+		
+		lblNewLabel = new JLabel("Usuario");
+		lblNewLabel.setBounds(396, 104, 46, 14);
+		pUsuarios.add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("Contraseña");
+		lblNewLabel_1.setBounds(385, 189, 76, 14);
+		pUsuarios.add(lblNewLabel_1);
+		
+		lblNewLabel_2 = new JLabel("Lista de usuarios");
+		lblNewLabel_2.setBounds(152, 42, 98, 14);
+		pUsuarios.add(lblNewLabel_2);
 		
 		chckbxDescuentoFamilia = new JCheckBox("Familia numerosa");
 		chckbxDescuentoFamilia.setBounds(591, 304, 164, 23);
@@ -587,7 +695,7 @@ public class Supermercado extends JFrame {
 				try {
 					BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
 					bufferedWriter.newLine();
-					String contraseña = DigestUtils.sha256Hex(txPassword.getText());
+					String contraseña = DigestUtils.sha256Hex(passwordF.getText());
 					String input = txUsuario.getText()+","+contraseña;
 					bufferedWriter.write(input);
 					bufferedWriter.close();
@@ -598,7 +706,7 @@ public class Supermercado extends JFrame {
 				}
 				JOptionPane.showMessageDialog(null, "Usuario añadido");
 				txUsuario.setText("");
-				txPassword.setText("");
+				passwordF.setText("");
 				btnUsuarios.doClick();
 			}
 		});
@@ -606,7 +714,7 @@ public class Supermercado extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String fileName = "fichero/contraseñas.txt";
 				String listaUsuarios="";
-				String usuarioB =txUsuario.getText();
+				String usuarioB =passwordF.getText();
 				int contador = 0;
 
 		        try {
@@ -641,7 +749,7 @@ public class Supermercado extends JFrame {
 					System.out.println("Error al escribir en el archivo: " + excp.getMessage());
 				}
 		        JOptionPane.showMessageDialog(null, "Usuario borrado");
-				txUsuario.setText("");
+		        passwordF.setText("");
 		        btnUsuarios.doClick();
 			}
 		});
@@ -673,6 +781,11 @@ public class Supermercado extends JFrame {
 			}
 		});
 		btnVolverFruta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(0);
+			}
+		});
+		btnVolverUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(0);
 			}
@@ -853,6 +966,7 @@ public class Supermercado extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				nuevaFactura.quitarProducto(txNombreProducto.getText());
 				txFactura.setText(nuevaFactura.mostrarListaCompra());
+				txNombreProducto.setText("");
 			}
 		});
 		
